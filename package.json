@@ -1,0 +1,55 @@
+{
+  "name": "jmsh",
+  "version": "1.0.0",
+  "description": "An HTML app of iPhone 4 interfaces for interaction with Home Assistant.",
+  "scripts": {
+    "clean:dist": "rm -rf dist",
+    "clean:tmp": "rm -rf tmp && mkdir tmp && mkdir tmp/html",
+    "clean:dsstore": "find . -name '.DS_Store' -type f -delete",
+    "dev:sass": "sass src/scss:dist/css src/views:dist/css",
+    "dev:js": "babel src/js/vendor src/js/main.js src/views/**/*.js --out-file dist/js/main.js --source-maps inline --presets=@babel/preset-env",
+    "dev:svg": "cp -R src/svg dist",
+    "dev:launch": "cp -R src/launch dist",
+    "dev:m4a": "cp -R src/m4a dist",
+    "watch:m4a": "watch 'npm run dev:m4a' src/m4a",
+    "build:sass": "npm run dev:sass -- --no-source-map && postcss tmp/css/*.css --use autoprefixer -d dist/css",
+    "build:js": "babel src --out-file dist/js/main.js",
+    "build:html": "html-import-partials src/views/**/*.html -o tmp/html && html-minifier --input-dir tmp/html --output-dir dist --file-ext html --collapse-whitespace --remove-comments --remove-script-type-attributes --remove-tag-whitespace  --minify-css true --minify-js true",
+    "watch:svg": "watch 'npm run dev:svg' src/svg",
+    "watch:launch": "watch 'npm run dev:launch' src/launch",
+    "watch:sass": "npm run dev:sass -- --watch --error-css",
+    "watch:js": "watch 'npm run dev:js' src/js src/views",
+    "watch:views": "watch 'npm run build:html' src/views",
+    "watch:partials": "watch 'npm run build:html' src/partials",
+    "serve": "browser-sync dist -w --port 8080 --no-open",
+    "start": "npm run clean:dist && npm run clean:dsstore && npm run clean:tmp && npm-run-all dev:js --parallel watch:sass watch:views watch:partials watch:js watch:svg watch:launch watch:m4a serve",
+    "build": "npm run clean:dist && npm run clean:dsstore && npm run clean:tmp && npm-run-all build:sass build:js && npm run build:html"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": ">=0.75%, iOS>=7",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.29.3",
+    "browserslist": "^4.21.4",
+    "home-assistant-js-websocket": "^8.0.1",
+    "html-import-partials": "^1.0.1",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^7.1.2",
+    "sass": "^1.32.8",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "core-js": "^3.30.2",
+    "long-press-event": "^2.5.0"
+  }
+}
