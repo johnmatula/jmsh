@@ -9,7 +9,7 @@ These are my light switches! The project, [Smarthome](https://johnmatu.la/smarth
 
 The Smarthome project (`jmsh` for short) is my personal home control project that connects to [Home Assistant](https://www.home-assistant.io) to provide easy, direct switches and buttons in my apartment. Its goal is to eschew the clunky, menu-riddled smartphone apps that budget and big-brand devices alike ship with. I wanted something that was useful to me and usable by my friends.
 
-(And yes that _is_ 2011’s [iPhone 4](#iphone4).)
+(And yes, that _is_ 2011’s [iPhone 4](#iphone4).)
 
 
 ## What’s it built with?
@@ -17,14 +17,14 @@ The Smarthome project (`jmsh` for short) is my personal home control project tha
 
 |  | Component |  Product   |  Remarks  |
 |--|------|----|-----|
-| 🔨 | Hardware |     |   |
+| <mark>🔨</mark> | **Hardware** |     |   |
 | | hub | Raspberry Pi | Debian computer that locally runs Home Assistant and locally hosts web apps |
 | | lightbulbs | Zigbee, Tuya | color-changing bulbs to screw into lamps and ceiling sockets |
 | | outlets | Zigbee, Tuya | wireless on-off switches, like for counter lights |
 | | button panel | iPhone 4 | touch screens that run custom-built web apps |
 | | power | USB extension cords, 30-pin USB cables, and USB bricks | typical iPhone charging equipment |
 | | cord management | cord runs, cord tacks, and temporary adhesive | temporary, safer power access in outlet-less corners |
-| 🏠 |  Software |     |   |
+| <mark>🏠</mark> |  **Software** |     |   |
 | | smart device hub | Home Assistant | runs on the Raspberry Pi for blended setups and custom device logic |
 | | web app hub | Apache | also running on the Raspberry Pi, serving up the custom, local web app pages |
 | | jailbreak | Pangu 1.3 | enables full control of the iPhone 4 to manipulate brightness automatically, override home button behavior, and use f.lux for warmer screens |
