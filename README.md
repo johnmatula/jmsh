@@ -9,7 +9,7 @@ These are my light switches! The project, [Smarthome](https://johnmatu.la/smarth
 
 The Smarthome project (`jmsh` for short) is my personal home control project that connects to [Home Assistant](https://www.home-assistant.io) to provide easy, direct switches and buttons in my apartment. Its goal is to eschew the clunky, menu-riddled smartphone apps that budget and big-brand devices alike ship with. I wanted something that was useful to me and usable by my friends.
 
-(And yes, that _is_ 2011’s [iPhone 4](#iphone4).)
+(And yes, that _is_ 2010’s [iPhone 4](#iphone4).)
 
 
 ## What’s it built with?
