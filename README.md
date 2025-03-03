@@ -7,7 +7,7 @@
 
 This repo contains the button panel web apps used in my smart home. They’re my apartment’s light switches!
 
-These apps are part of the [Smarthome project](https://johnmatu.la/smarthome), a system I put together that relies on [Home Assistant](https://www.home-assistant.io) and repurposed hardware to offer everyday smart home controls. These button apps, the touch hardware they run on, and the hub that handles device connections combine into a tight home control system. The result is tight, direct control that’s useful to me and usable by my friends.
+These apps are part of the [Smarthome project](https://johnmatu.la/smarthome), a system I put together that relies on [Home Assistant](https://www.home-assistant.io) and repurposed hardware to offer everyday smart home controls. These button apps, the touch hardware they run on, and the hub that handles device connections combine into a tight home control system. The result is tight, direct control that’s useful to me and usable by my friends.
 
 (And yes, that _is_ 2010’s [iPhone 4](#iphone4).)
 
