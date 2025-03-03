@@ -1,0 +1,61 @@
+// Cover for unscaled content handoff
+#container::before {
+	background-image: url("../../launch/403.00.png");
+}
+
+
+.feedback {
+	transition: opacity 0.8s cubic-bezier(.54,.01,.64,.93);
+}
+
+.feedback, .feedback * {
+	fill: #E9E5FF;
+}
+
+.kitchen.target:active ~ * .kitchen.feedback,
+.dining.target:active ~ * .dining.feedback,
+.letterboard.target:active ~ * .letterboard.feedback,
+.cabinet.target:active ~ * .cabinet.feedback {
+	opacity: .7;
+	transition: opacity 0s;
+}
+
+.state--kitchen--off .kitchen.off,
+.state--dining--off .dining.off,
+.state--letterboard--off .letterboard.off,
+.state--cabinet--off .cabinet.off {
+	opacity: 1;
+}
+
+.state--kitchen--off .glyphs.kitchenhue,
+.state--dining--off .glyphs.dininghue,
+.state--counter--off .glyphs.counterhue {
+	opacity: 0;
+}
+
+.state--counter--on .counter.off,
+.state--kitchen--on .kitchen.on,
+.state--dining--on .dining.on,
+.state--letterboard--on .letterboard.on,
+.state--cabinet--on .cabinet.on {
+	opacity: 1;
+}
+
+.letterboard.on svg *,
+.cabinet.on svg * {
+	fill: #FFBD66
+}
+
+
+
+#glyphs__kitchenhue,
+#glyphs__dininghue, 
+#glyphs__counterhue {
+	//transition: fill .8s;
+}
+
+.glyphs.kitchenhue,
+.glyphs.dininghue, 
+.glyphs.counterhue {
+	transition: opacity .8s;
+}

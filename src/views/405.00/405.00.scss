@@ -1,0 +1,34 @@
+// Cover for unscaled content handoff
+#container::before {
+	background-image: url("../../launch/405.00.png");
+}
+
+.feedback {
+	transition: opacity 0.8s cubic-bezier(.54,.01,.64,.93);
+}
+
+.feedback, .feedback * {
+	fill: #E9E5FF;
+}
+
+.static {
+	opacity: 1;
+}
+
+.on svg * {
+	fill: #C07330
+}
+
+.glyphs.glyphs--burn svg * {
+	opacity: .7;
+}
+
+.daytime.target:active ~ * .daytime.feedback,
+.nighttime.target:active ~ * .nighttime.feedback,
+.piano.target:active ~ * .piano.feedback,
+.party.target:active ~ * .party.feedback,
+.dimmy.target:active ~ * .dimmy.feedback,
+.offbeethoven.target:active ~ * .offbeethoven.feedback{
+	opacity: .7;
+	transition: opacity 0s;
+}

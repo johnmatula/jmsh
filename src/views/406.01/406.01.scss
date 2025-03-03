@@ -1,0 +1,30 @@
+// Cover for unscaled content handoff
+#container::before {
+	background-image: url("../../launch/406.01.png");
+}
+
+.feedback {
+	transition: opacity 0.8s cubic-bezier(.54,.01,.64,.93);
+}
+
+.feedback, .feedback * {
+	fill: #E9E5FF;
+}
+
+.feedback.lowerleft path {
+	fill: none;
+}
+
+
+.tone.target:active ~ * .tone.feedback,
+.mark.target:active ~ * .mark.feedback,
+.back.target:active ~ * .back.feedback,
+.metronome.target:active ~ * .metronome.feedback {
+	opacity: .7;
+	transition: opacity 0s;
+}
+
+.digital.target.js--long-press ~ * .digital.feedback {
+	opacity: .2;
+	transition: opacity 0s;
+}

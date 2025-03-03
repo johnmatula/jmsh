@@ -1,0 +1,41 @@
+// Cover for unscaled content handoff
+#container::before {
+	background-image: url("../../launch/406.00.png");
+}
+
+
+.state--spotlight--off .spotlight.off,
+.state--floorlamp--off .floorlamp.off,
+.state--salt--off .salt.off,
+.state--clapper--off .clapper.off{
+	opacity: 1;
+}
+
+.state--spotlight--off .glyphs.spotlighthue {
+	opacity: 0;
+}
+
+.state--floorlamp--off .glyphs.floorlamphue {
+	opacity: 0;
+}
+
+.static.clapper,
+.state--salt--on .salt.off,
+.state--salt--on .salt.on,
+.state--spotlight--on .spotlight.on,
+.state--floorlamp--on .floorlamp.on {
+	opacity: 1;
+}
+
+
+#glyphs__spotlighthue,
+#on__spotlight,
+#glyphs__floorlamphue,
+#on__floorlamp {
+	//transition: fill .8s;
+}
+
+.glyphs.spotlighthue,
+.glyphs.floorlamphue {
+	transition: opacity .7s;
+}

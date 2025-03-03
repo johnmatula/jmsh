@@ -1,0 +1,15 @@
+.svgs--goosekey {
+	background: url("../../svg/goosekey.jpg") center center / cover no-repeat;
+}
+
+.clock.glyph tspan {
+	font-size: 48.6px;
+	height: 34px;
+	letter-spacing: -2.50px !important;
+}
+
+.clock__minutes, .clock__hours {
+	// BRRAEND
+	fill: #a19d99 !important;
+}
+

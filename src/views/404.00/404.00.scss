@@ -1,0 +1,42 @@
+// Cover for unscaled content handoff
+#container::before {
+	background-image: url("../../launch/404.00.png");
+}
+
+.state--forest--off .forest.off,
+.state--bedside--off .bedside.off,
+.state--neon--off .neon.off {
+	opacity: 1;
+}
+
+.state--forest--off .glyphs.foresthue,
+.state--bedside--off .glyphs.bedsidehue {
+	opacity: 0;
+}
+
+.state--neon--on .neon.off,
+.state--forest--on .forest.on,
+.state--bedside--on .bedside.on,
+.state--neon--on .neon.on {
+	opacity: 1;
+}
+
+.state--forest--on .glyphs.foresthue,
+.state--bedside--on .glyphs.bedsidehue {
+	opacity: 1;
+}
+
+
+#glyphs__foresthue,
+#glyphs__bedsidehue,
+#on__forest,
+#on__bedside {
+	//transition: fill .8s;
+}
+
+#on__forestcover,
+#on__bedsidecover,
+.glyphs.foresthue,
+.glyphs.bedsidehue {
+	transition: opacity .8s;
+}
