@@ -3,3 +3,5 @@ dist
 dist-dev
 scraps
 *_*_keys.js
+.DS_Store
+*DS_Store
