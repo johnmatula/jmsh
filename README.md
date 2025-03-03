@@ -1,12 +1,11 @@
 # jmsh
 
-![alt text](https://johnmatu.la/ext/smarthome-wide.jpg)
+![A photo of me tapping a button panel in the Smarthome (jmsh) system](https://johnmatu.la/ext/smarthome-wide.jpg)
 
----
 
 ## What is this?
 
-These are my light switches! [My website](https://johnmatu.la/smarthome) has an extensive case study and plenty of photos.
+These are my light switches! The project, [Smarthome](https://johnmatu.la/smarthome), has an extensive case study and plenty of photos.
 
 The Smarthome project (`jmsh` for short) is my personal home control project that connects to [Home Assistant](https://www.home-assistant.io) to provide easy, direct switches and buttons in my apartment. Its goal is to eschew the clunky, menu-riddled smartphone apps that budget and big-brand devices alike ship with. I wanted something that was useful to me and usable by my friends.
 
@@ -16,22 +15,22 @@ The Smarthome project (`jmsh` for short) is my personal home control project tha
 ## What’s it built with?
 
 
-| 🔨 Hardware |     |   |
-|------|----|-----|
-| hub | Raspberry Pi | Debian computer that locally runs Home Assistant and locally hosts web apps |
-| lightbulbs | Zigbee, Tuya | color-changing bulbs to screw into lamps and ceiling sockets |
-| outlets | Zigbee, Tuya | wireless on-off switches, like for counter lights |
-| button panel | iPhone 4 | touch screens that run custom-built web apps |
-| power | USB extension cords, 30-pin USB cables, and USB bricks | typical iPhone charging equipment |
-| cord management | cord runs, cord tacks, and temporary adhesive | temporary, safer power access in outlet-less corners |
-|  |  |  |
-| 🏠 Software |     |   |
-| smart device hub | Home Assistant | runs on the Raspberry Pi for blended setups and custom device logic |
-| web app hub | Apache | also running on the Raspberry Pi, serving up the custom, local web app pages |
-| jailbreak | Pangu 1.3 | enables full control of the iPhone 4 to manipulate brightness automatically, override home button behavior, and use f.lux for warmer screens |
-| design software | Sketch | plans out SVG art for buttons, controls, glyphs, on separate layers |
-| SVG splitter | svgsplit.com | generates one SVG file per outer group (Sketch layer) to show feedback in a GPU-friendly way |
-| development browser | Webkit build 91 (13.1) | allows Web Inspector over USB, specifically with support for the iPhone 4 |
+|  | Component |  Product   |  Remarks  |
+|--|------|----|-----|
+| 🔨 | Hardware |     |   |
+| | hub | Raspberry Pi | Debian computer that locally runs Home Assistant and locally hosts web apps |
+| | lightbulbs | Zigbee, Tuya | color-changing bulbs to screw into lamps and ceiling sockets |
+| | outlets | Zigbee, Tuya | wireless on-off switches, like for counter lights |
+| | button panel | iPhone 4 | touch screens that run custom-built web apps |
+| | power | USB extension cords, 30-pin USB cables, and USB bricks | typical iPhone charging equipment |
+| | cord management | cord runs, cord tacks, and temporary adhesive | temporary, safer power access in outlet-less corners |
+| 🏠 |  Software |     |   |
+| | smart device hub | Home Assistant | runs on the Raspberry Pi for blended setups and custom device logic |
+| | web app hub | Apache | also running on the Raspberry Pi, serving up the custom, local web app pages |
+| | jailbreak | Pangu 1.3 | enables full control of the iPhone 4 to manipulate brightness automatically, override home button behavior, and use f.lux for warmer screens |
+| | design software | Sketch | plans out SVG art for buttons, controls, glyphs, on separate layers |
+| | SVG splitter | svgsplit.com | generates one SVG file per outer group (Sketch layer) to show feedback in a GPU-friendly way |
+| | development browser | Webkit build 91 (13.1) | allows Web Inspector over USB, specifically with support for the iPhone 4 |
 
 
 <a name="iphone4"></a>
