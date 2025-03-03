@@ -5,9 +5,9 @@
 
 ## What is this?
 
-These are my light switches! The project, [Smarthome](https://johnmatu.la/smarthome), has an extensive case study and plenty of photos.
+This is a repo of the button panel apps for Smarthome, the way I control my smart devices. They are my apartment’s light switches.
 
-The Smarthome project (`jmsh` for short) is my personal home control project that connects to [Home Assistant](https://www.home-assistant.io) to provide easy, direct switches and buttons in my apartment. Its goal is to eschew the clunky, menu-riddled smartphone apps that budget and big-brand devices alike ship with. I wanted something that was useful to me and usable by my friends.
+These apps are part of the [Smarthome project](https://johnmatu.la/smarthome), a way to control devices connected to [Home Assistant](https://www.home-assistant.io) in an easy and direct way. This project — these button apps, the touch hardware they run on, and the hub that handles device connections — is a tight, always-on system that’s useful to me and usable by my friends. 
 
 (And yes, that _is_ 2010’s [iPhone 4](#iphone4).)
 
