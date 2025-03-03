@@ -45,6 +45,7 @@ Yep! I’ve accrued an iPhone 4 fleet for the button panels because they are wil
 * permanent jailbreak capability to customize every hardware and software function
 * post-jailbreak, built-in f.lux capability to avoid the glowing blue nightlight effect
 * a sturdy glass-and-steel housing that is light enough to be safely mounted with renter-friendly adhesive
+* with shipping, about $30 off of eBay
 
 ### Upsides and downsides
 * **Good: the hardware lasts and lasts.**<br>The panel in the kitchen is on its fourteenth year of service: it was my first smartphone in 2011, then went on to be my spare device for wall-based web app experiments in 2015, and is currently living a happy life as the kitchen’s button panel.
