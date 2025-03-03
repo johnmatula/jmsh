@@ -1,6 +1,6 @@
 # jmsh
 
-![A photo of me tapping a button panel in the Smarthome (jmsh) system](https://johnmatu.la/ext/smarthome-wide.jpg)
+![A photo of me tapping a button panel in the Smarthome (jmsh) system](https://johnmatu.la/ext/smarthome-wide.jpg?0x00)
 
 
 ## What is this?
