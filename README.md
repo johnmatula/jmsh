@@ -36,8 +36,7 @@ The Smarthome project (`jmsh` for short) is my personal home control project tha
 <a name="iphone4"></a>
 ## I’m sorry — an iPhone 4?
 
-Yep! I’ve accrued an iPhone 4 fleet for the button panels because they are wildly cost effective for what you get:
-
+Yep! I’ve accrued an iPhone 4 fleet for the button panels because they are wildly cost effective for what you get: 
 * high-resolution, multi-touch display that looks good at wide angles
 * a dedicated GPU
 * a speaker and microphone
@@ -47,31 +46,29 @@ Yep! I’ve accrued an iPhone 4 fleet for the button panels because they are wil
 * post-jailbreak, built-in f.lux capability to avoid the glowing blue nightlight effect
 * a sturdy glass-and-steel housing that is light enough to be safely mounted with renter-friendly adhesive
 
-Most importantly, they have proven that they last. The panel in the kitchen is on its fourteenth year of service: it was my first smartphone in 2011, then went on to be my spare device for wall-based web app experiments in 2015, and is currently living a happy life as the kitchen’s button panel.
-
-
 ### Upsides and downsides
-A big upside: its very low cost. The whole thing is portable, so I save on sunk costs as it comes with me to the next rental. It’s a flexible system, so I can safely give low-cost devices a try. Best of all, I can improve on inconvenient switch and outlet placement without violating my lease or hiring help from an electrician.
+> **Good: the hardware lasts and lasts.** The panel in the kitchen is on its fourteenth year of service: it was my first smartphone in 2011, then went on to be my spare device for wall-based web app experiments in 2015, and is currently living a happy life as the kitchen’s button panel.
 
-A big downside: an old tech stack. The iPhone 4 uses a version of WebKit that’s essentially encased in amber: it can use web features from around 2014 and earlier, making for a weird, back-in-the-day coding experience. (Build-time transpilers help ease this pain.)
+> **Good: the system’s cost is low and amortizes.** The whole thing is portable, so I save on sunk costs as it comes with me to the next rental. It’s a flexible system, so I can safely give low-cost devices a try. Best of all, I can improve on inconvenient switch and outlet placement without violating my lease or hiring help from an electrician.
+
+> **Bad: the tech stack is basically encased in amber.** The iPhone 4 relies on 2014’s version of WebKit, making for a weird, back-in-the-day coding experience. Build-time transpilers help ease this pain, but it also involves a degree of Stack Overflow sleuthing that takes time.
 
 
 ## Is there a framework?
 
-Nope! Some people stress bake and I guess I stress spaghetti code. My original exploration began with the funky four scene buttons with the happy dude (the foyer panel). When I realized how well that test worked and blended in with the place, it was a sudden month-long blur of coding.
+Nope, at least not yet. Smarthome underwent a quick shift from “will this work?” to “this works so smoothly let’s gooo!” As such, the project is ready for a refactor.
 
-> **Incorporate components.** The consistent grid approach evolved along the way, and there’s some control repetition that would be ripe for cleanup.
+> **Incorporate components.** The gridded button layout evolved along the way, and there’s some repetition present that’s ripe for cleaning up.
 
-> **Eliminate duplicated SCSS.** I excitedly ran wild with ⌘C and ⌘V after early FPS tests passed with 60 flying colors, so I’ll be refactoring class names and target IDs appropriately.
+> **Eliminate duplicated SCSS.** I excitedly ran wild with ⌘C and ⌘V after early FPS tests passed with 60 flying colors. I’ll be refactoring class names and target IDs to make future ideas easier.
 
-> **Comment the iPhone-specific hacks I had to pull.** I’m not in a framework-building situation presently, but for those curious enough to whack at HTML or use frameworks of their own choice, I’ll leave enough examples of (old, old) patterns that work well for iPhone 4. I’ll pull out examples of the GPU and hardware optimizations that made it all extra smooth, too.
+> **Comment the code.** For others and for future-me alike, I want to note the iPhone 4-specific hacks I used, as well as the decisions that let the GPU run as smoothly as it does.
 
 
 
 ## Links, resources, acknowledgments
 
 * [Fix blank-on-launch web apps](https://stackoverflow.com/questions/7535643/content-disappears-for-fraction-of-a-second-on-offline-web-app-load#11350053)
-* [Remove tap delay](FastClick)
-* []()
+* [Remove tap delay](https://github.com/ftlabs/fastclick/tree/main)
 
-<small>This book is made available strictly for informational purposes. Its contents are provided on an as-is basis without guarantee or warranty. The Smarthome project is not offered for sale, trade, or distribution. This project is not paid for, sponsored, or endorsed by any company. “Apple strongly cautions against installing any software that modifies iOS.” All trademarks, including wordmarks, designs, and logos, mentioned in this book are property of their respectful owners.</small>
+<sup><sub>This book is made available strictly for informational purposes. Its contents are provided on an as-is basis without guarantee or warranty. The Smarthome project is not offered for sale, trade, or distribution. This project is not paid for, sponsored, or endorsed by any company. “Apple strongly cautions against installing any software that modifies iOS.” All trademarks, including wordmarks, designs, and logos, mentioned in this book are property of their respectful owners.</sub></sup>
