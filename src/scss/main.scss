@@ -1,0 +1,449 @@
+body, html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: #000;
+  margin: 0;
+  min-height: 480px;
+  font-family: sans-serif;
+  height: 100%;
+  padding: 0;
+  user-select: none;
+  width: 100%;
+  min-width: 320px;
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+// Catch first app boot where there is a brief, unzoomed flash of content:
+// It’s before the meta tag has been added to the page but after handoff from
+// the iOS static launch image has (over-eagerly) completed.
+//
+// The window’s inner dimensions are 980×1470, a scale factor of 3.0625.
+#container::before {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: 999;
+  width: 320px;
+  height: 480px;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility 0s .25s;
+  background-position: left top;
+  background-size: 320px 480px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (width: 980px) and (height: 1470px) {
+  #container::before {
+    opacity: 1;
+    visibility: visible;
+    width: 980px;
+    height: 1470px;
+    background-size: 980px 1470px;
+    transition: opacity 0s, visibility 0s;
+  }
+}
+
+audio {
+  display: block;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+.off,
+.on,
+.glyphs,
+.feedback,
+.target {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.off, .static {
+  z-index: 10;
+}
+
+.on {
+  z-index: 20;
+}
+
+.glyphs {
+  z-index: 40;
+}
+
+.feedback {
+  z-index: 30;
+}
+
+.target {
+  z-index: 50;
+}
+
+// Overflow is not hidden so that the splash handoff
+// doesn’t get cut off at its unscaled size.
+#container {
+  display: block;
+  width: 320px;
+  height: 480px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+button {
+  -webkit-appearance: none;
+  background: none;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}
+
+.svgs {
+  background: #000;
+  width: 320px;
+  height: 480px;
+}
+
+svg {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 320px;
+  height: 480px;
+  -webkit-transform: translateZ(0);
+}
+
+// Clean text artifacts, especially from bowls and descenders
+// that go beyond the bounds of the <tspan>
+text, tspan {
+  stroke: #00000000;
+  stroke-width: 12px;
+  paint-order: stroke fill;
+}
+
+#taptargets rect,
+.feedback,
+.off,
+.on,
+.glyphs
+/* .target ~ *:not(.target) */ {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none;
+  user-select: none;
+  
+  svg {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.root, .root .svgs {
+  -webkit-transform-origin: 160px 240px;
+  transform-origin: 160px 240px;
+  
+}
+
+tspan {
+  align-items: center;
+  display: flex;
+}
+
+.target {
+  display: block;
+  position: fixed;
+  opacity: 0;
+}
+
+.feedback {
+  opacity: 0;
+}
+
+.off,
+.on {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(.54,.01,.64,.93);
+}
+
+.static {
+  opacity: 1;
+}
+
+.bridge {
+  height: 1px;
+  left: 0px;
+  top: 0px;
+  width: 1px;
+  opacity: 0;
+  position: absolute;
+  z-index: 99999;
+
+  &--x0 {
+    left: 0px;
+  }
+
+  &--x2 {
+    left: 2px;
+  }
+
+  &--x4 {
+    left: 4px;
+  }
+
+  &--x6 {
+    left: 6px;
+  }
+
+  &--x8 {
+    left: 8px;
+  }
+  
+  &--y0 {
+    top: 0px;
+  }
+  
+  &--y1 {
+    top: 1px;
+  }
+  
+  &--y2 {
+    top: 2px;
+  }
+  
+  &--y3 {
+    top: 3px;
+  }
+  
+  &--y4 {
+    top: 4px;
+  }
+}
+
+// Link SVG font-family attributes with appropriate CSS (yay lazy!)
+svg [font-family*="MicrogrammaD-MediExte"] {
+  &, & tspan {
+    font-family: "MicrogrammaD-MediExte","MicrogrammaD-MedExte"
+  }
+}
+
+svg [font-family*="MicrogrammaD-BoldExte"] {
+  &, & tspan {
+    font-family: "MicrogrammaD-BoldExte"
+  }
+}
+
+svg [font-family*="NYCTAStandard-Medium"],
+svg [font-family*="NYCTA Standard"] {
+  &, & tspan {
+    font-family: "NYCTAStandard-Medium"
+  }
+}
+
+svg [font-family*="Neue Haas Grotesk Display Pro"],
+svg [font-family*="NHaasGroteskDSPro-65Md"] {
+  &, & tspan {
+    font-family: "NHaasGroteskDSPro-65Md"
+  }
+}
+
+svg [font-family*="NHaasGroteskDSPro-55Rg"] {
+  &, & tspan {
+    font-family: "NHaasGroteskDSPro-55Rg"
+  }
+}
+
+svg [font-family*="AGBook-Stencil"] {
+  &, & tspan {
+    font-family: "AGBook-Stencil"
+  }
+}
+
+svg [font-family*="NumericsP102JMSH"] {
+  &, & tspan {
+    font-family: "NumericsP102JMSH"
+  }
+}
+
+svg [font-family*="LiquidCrystal"] {
+  &, & tspan {
+    font-family: "LiquidCrystal"
+  }
+}
+
+
+.root .svgs {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-timing-function: cubic-bezier(.2,.8,.45,1); // ease out/fade in
+  animation-timing-function: cubic-bezier(.2,.8,.45,1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; 
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+// Exit duration matches the JS provided duration
+// (delay anything until CSS is done).
+.root.is-exiting .svgs {
+  -webkit-animation-duration: .42s;
+  animation-duration: .42s;
+  -webkit-animation-timing-function: cubic-bezier(.6,.3,1,1); // gentler ease in/scale back
+  animation-timing-function: cubic-bezier(.6,.3,1,1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; 
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+
+
+
+// The set of properties used should be identical
+// in order to prime the GPU as nicely as possible.
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.946);
+  }
+}
+
+
+
+.clock.glyph tspan {
+  font-size: 48.6px;
+  height: 34px;
+  letter-spacing: -2.50px !important;
+}
+
+.feedback {
+  transition: opacity 0.8s cubic-bezier(.54,.01,.64,.93);
+}
+
+.feedback, .feedback path, .feedback polygon, .feedback circle, .feedback rect, .feedback tspan {
+  fill: #E9E5FF;
+}
+
+.feedback.feedback--ring,
+.feedback.feedback--ring path,
+.feedback.feedback--ring circle {
+  fill: none;
+}
+
+.feedback.feedback--ring .feedback--exclude,
+.feedback.feedback--ring .feedback--exclude * {
+  fill: #e9e5ff;
+}
+
+.switch.target:active ~ div .switch.feedback,
+.dimdown.target:active ~ div .dimdown.feedback,
+.dimup.target:active ~ div .dimup.feedback,
+.temp.target:active ~ div .temp.feedback, 
+.forest.target:active ~ div .forest.feedback,
+.bedside.target:active ~ div .bedside.feedback,
+.neon.target:active ~ div .neon.feedback,
+.clock.target:active ~ div .clock.feedback,
+.light.target:active ~ div .lowerright.feedback,
+.dimdown.target:active ~ div .dimdown.feedback,
+.dimup.target:active ~ div .dimup.feedback,
+.back.target:active ~ div .lowerleft.feedback, 
+.back.target:active ~ div .back.feedback, 
+.light.target:active ~ div .light.feedback, 
+.clockleft.target:active ~ div .upperleft.feedback,
+.clockright.target:active ~ div .upperright.feedback,
+.clocka.target:active ~ div .clocka.feedback,
+.clockb.target:active ~ div .clockb.feedback,
+.clockc.target:active ~ div .clockc.feedback,
+.clapper.target:active ~ div .clapper.feedback,
+.metronome.target:active ~ div .metronome.feedback,
+.selectora.target:active ~ div .selectora.feedback,
+.selectorb.target:active ~ div .selectorb.feedback,
+.selectorc.target:active ~ div .selectorc.feedback,
+.random.target:active ~ div .random.feedback,
+.spotlight.target:active ~ div .spotlight.feedback,
+.salt.target:active ~ div .salt.feedback,
+.clapper.target:active ~ div .clapper.feedback,
+.floorlamp.target:active ~ div .floorlamp.feedback,
+.power.target:active ~ div .power.feedback {
+  opacity: .7;
+  transition: opacity 0s;
+}
+
+.selectorarrow {
+  transform: translateY(-58px);
+  transition: transform .15s cubic-bezier(.75,0,1,1);
+  -webkit-transform: translateY(-58px);
+  -webkit-transition: -webkit-transform .15s cubic-bezier(.75,0,1,1);
+  -webkit-transition-fill: both;
+}
+
+// Sorry, timing delays, iOS can’t handle you during screen recordings.
+// During normal operation it’s fine, but still adds a bit to the GPU load.
+.clock--twelve .twelvearrow,
+.clock--seventies .seventiesarrow,
+.clock--twentyfour .twentyfourarrow,
+#container [data-match*="hue_preset_a"] .selectorarrow.arrowa,
+#container [data-match*="hue_preset_b"] .selectorarrow.arrowb,
+#container [data-match*="hue_preset_c"] .selectorarrow.arrowc,
+.ac--fan-only .selectorarrow.arrowa,
+.ac--cool .selectorarrow.arrowb,
+.ac--auto .selectorarrow.arrowc, {
+  transform: translateY(0px);
+  transition: transform .35s cubic-bezier(0,1,1,1);
+  -webkit-transform: translateY(0px);
+  -webkit-transition: -webkit-transform .35s cubic-bezier(0,1,1,1) .175s;
+}
+
+.state--switch--off .glyphs.switchhuediv {
+  opacity: 0;
+}
+
+.state--switch--off .off {
+  opacity: 1;
+}
+
+.state--switch--on .off,
+.state--switch--on .on {
+  opacity: 1;
+}
+
+.state--switch--on .switch.off {
+  opacity: 0;
+}
