@@ -7,19 +7,28 @@ async function authSocketData() {
 	
 	window.hass = await HAWS.createConnection({ auth });
 	HAWS.subscribeEntities(window.hass, (response) => {
-		window.data.entities = response,
+		//window.data.entities = response;
+				
+		var keys = Object.keys(response).filter(key => /(^(?:automation.)|(?:climate.)|(?:light.)|(?:media_player.)|(?:remote.)|(?:scene.)|(?:sensor\.hue)|(?:sensor\.keys)|(?:switch.))+\w+/.test(key));
+		
+		for (var i = 0; i < keys.length; ++i) {
+			if(!response[keys[i]]) continue;
+			
+			if(!window.data.entities[keys[i]] ||
+				Date.parse(window.data.entities[keys[i]].last_updated) < Date.parse(response[keys[i]].last_updated) ) {
+					window.data.entities[keys[i]] = response[keys[i]];
+				}
+		}
+
 		window.data.updated = Date.now()
 	});
 }
-
 
 function pingUser() {
 	HAWS.getUser(hass);
 }
 
 function damperUnavailableResult(entity, duration) {
-	// TODO: Implement!
-	
 	window.data.unavailable = window.data.unavailable || {};
 	window.data.unavailable[entity] = "unavailable"
 }
