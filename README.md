@@ -5,11 +5,11 @@
 
 ## What is this?
 
-These are my light switches! The project, [Smarthome](https://johnmatu.la/smarthome), has an extensive case study and plenty of photos.
+This repo contains the button panel web apps used in my smart home. They’re my apartment’s light switches!
 
-The Smarthome project (`jmsh` for short) is my personal home control project that connects to [Home Assistant](https://www.home-assistant.io) to provide easy, direct switches and buttons in my apartment. Its goal is to eschew the clunky, menu-riddled smartphone apps that budget and big-brand devices alike ship with. I wanted something that was useful to me and usable by my friends.
+These apps are part of the [Smarthome project](https://johnmatu.la/smarthome), a system I put together that uses [Home Assistant](https://www.home-assistant.io) and repurposed hardware for everyday home life. These button apps, the touch hardware they run on, and the hub that handles device connections combine tightly, giving me direct control that’s useful to me and usable by my friends.
 
-(And yes, that _is_ 2011’s [iPhone 4](#iphone4).)
+(And yes, that _is_ 2010’s [iPhone 4](#iphone4).)
 
 
 ## What’s it built with?
@@ -36,15 +36,18 @@ The Smarthome project (`jmsh` for short) is my personal home control project tha
 <a name="iphone4"></a>
 ## I’m sorry — an iPhone 4?
 
-Yep! I’ve accrued an iPhone 4 fleet for the button panels because they are wildly cost effective for what you get: 
-* high-resolution, multi-touch display that looks good at wide angles
+Yep! I’ve amassed a fleet of them because they are wildly cost-effective button panels. They have: 
+* high-resolution, multi-touch displays, legible even at odd or extreme angles
 * a dedicated GPU
+* permanent jailbreak capability to customize every part of the hardware, software, and sensors
 * a speaker and microphone
-* Bluetooth, Wi-Fi, and AirPlay
-* a gyroscope and GPS, handy for self-leveling
-* permanent jailbreak capability to customize every hardware and software function
-* post-jailbreak, built-in f.lux capability to avoid the glowing blue nightlight effect
-* a sturdy glass-and-steel housing that is light enough to be safely mounted with renter-friendly adhesive
+* Wi-Fi, Bluetooth, and AirPlay
+* ambient light sensor, gyroscope, and GPS (to stay in sync with the sun)
+* capabilities via jailbreak to eliminate blue-glow appearance
+* a sturdy glass-and-steel housing light enough to be safely mounted with renter-friendly adhesive
+
+On eBay, you’ll find them for $25 a pop.
+
 
 ### Upsides and downsides
 * **Good: the hardware lasts and lasts.**<br>The panel in the kitchen is on its fourteenth year of service: it was my first smartphone in 2011, then went on to be my spare device for wall-based web app experiments in 2015, and is currently living a happy life as the kitchen’s button panel.
